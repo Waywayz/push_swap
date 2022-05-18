@@ -1,36 +1,36 @@
 #include "push_swap.h"
 
-void	ft_exit(t_value v)
+void	ft_exit(t_value *v)
 {
 	int	i;
 
-	i = v.len;
+	i = v->len;
 	while (i >= 0)
 	{
-		free(v.str[i]);
+		free(v->str[i]);
 		i--;
 	}
-	free(v.str);
-	ft_printf("ERROR\n");
+	free(v->str);
+	write(1, "ERROR\n", 6);
 	exit(0);
 	return ;
 }
 
-void	check_same(int *tab, t_value v)
+void	check_same(t_value *v)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < v.len)
+	while (i < v->len)
 	{
 		j = i + 1;
-		while (j < v.len)
+		while (j < v->len)
 		{
-			if (tab[i] == tab[j])
+			if (v->tab_a[i] == v->tab_a[j])
 			{
-				ft_printf("ERROR\n");
-				free(tab);
+				write(1, "ERROR\n", 6);
+				free(v->tab_a);
 				exit(0);
 			}
 			j++;
@@ -39,22 +39,22 @@ void	check_same(int *tab, t_value v)
 	}
 }
 
-void	check_nbrs(t_value v)
+void	check_nbrs(t_value *v)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (v.str[i])
+	while (v->str[i])
 	{
 		j = 1;
-		if (v.str[i][0] == '-' && v.str[i][1] == '\0')
+		if (v->str[i][0] == '-' && v->str[i][1] == '\0')
 			ft_exit(v);
-		if (v.str[i][0] == '-' || (v.str[i][0] >= '0' && v.str[i][0] <= '9'))
+		if (v->str[i][0] == '-' || (v->str[i][0] >= '0' && v->str[i][0] <= '9'))
 		{
-			while (v.str[i][j])
+			while (v->str[i][j])
 			{
-				if (v.str[i][j] < '0' || v.str[i][j] > '9')
+				if (v->str[i][j] < '0' || v->str[i][j] > '9')
 					ft_exit(v);
 				j++;
 			}

@@ -1,27 +1,31 @@
-FT_PRINTF = ft_printf/libftprintf.a
-
-SRC = push_swap.c check_value.c operation.c algo.c \
-      		libft/ft_atoi.c \
-      		ft_printf/ft_printf.c \
-
-OBJ = push_swap.o check_value.o operation.o algo.o \
-      		libft/ft_atoi.o \
-      		ft_printf/ft_printf.o \
-
-HEADER = ./libft/libft.h push_swap.h
+LIBFT = libft/libft.a
 
 NAME = push_swap
 
+SRC = push_swap.c check_value.c operation.c operation_2.c operation_3.c algo.c \
+      		libft/ft_atoi.c libft/ft_split.c libft/ft_strjoin.c \
+
+OBJ = push_swap.o check_value.o operation.o operation_2.o operation_3.o algo.o \
+      		libft/ft_atoi.o libft/ft_split.o libft/ft_strjoin.o \
+
+HEADER = ./libft/libft.h push_swap.h
+
+CC = gcc
+
+CFLAGS = -Wall -Werror -Wextra
+
 all: $(NAME)
 
-$(NAME): $(SRC)
-	gcc -Wall -Werror -Wextra $(SRC) $(FT_PRINTF) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(SRC) $(LIBFT) -o $(NAME)
 
 clean:
-	rm -f $OBJ
+	$(MAKE) clean -C ./libft
+	-rm -rf $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	$(MAKE) clean -C ./libft
+	rm -rf $(NAME)
 
 re: fclean all
 
