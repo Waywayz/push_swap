@@ -90,7 +90,6 @@ int	main(int ac, char **av)
 			algo_len_3(&v);
 */
 		int i = 0;
-		op_rra(&v);
 		while (i < v.len)
 		{
 			printf("%i\n", v.tab_a[i]);
