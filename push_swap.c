@@ -85,7 +85,7 @@ int	main(int ac, char **av)
 		put_to_str(&v, av);
 		put_to_tab(&v);
 		if (tab_tried(v.tab_a, v.len) == 1)
-			free(v.tab_b);
+			return (0);
 		else if (v.len <= 3)
 			algo_len_3(&v);
 		else if (v.len == 5)
