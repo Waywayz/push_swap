@@ -1,5 +1,5 @@
 #include "push_swap.h"
-#include <stdio.h>
+
 void	**put_to_str(t_value *v, char **av)
 {
 	char	*str;
@@ -41,18 +41,18 @@ void	*put_to_tab(t_value *v)
 	int	i;
 
 	i = 0;
-	v->tab_a = malloc(sizeof(int) * v->len);
-	if (!v->tab_a)
+	v->tab = malloc(sizeof(int) * v->len);
+	if (!v->tab)
 		return (0);
 	while (v->str[i])
 	{
 		if (ft_atoi(v->str[i]) > 2147483647 || ft_atoi(v->str[i]) < -2147483648)
 		{
 			write(1, "ERROR\n", 6);
-			free(v->tab_a);
+			free(v->tab);
 			exit(0);
 		}
-		v->tab_a[i] = ft_atoi(v->str[i]);
+		v->tab[i] = ft_atoi(v->str[i]);
 		i++;
 	}
 	free_str(v);
@@ -84,17 +84,19 @@ int	main(int ac, char **av)
 		v.len = ac - 1;
 		put_to_str(&v, av);
 		put_to_tab(&v);
-/*		if (tab_tried(v.tab_a, v.len) == 1)
-			free(v.tab_a);
+		if (tab_tried(v.tab_a, v.len) == 1)
+			free(v.tab_b);
 		else if (v.len <= 3)
 			algo_len_3(&v);
-*/
-		int i = 0;
-		while (i < v.len)
-		{
-			printf("%i\n", v.tab_a[i]);
-			i++;
-		}
+		else if (v.len == 5)
+			algo_len_5(&v);
+
+	}
+	int i = 0;
+	while (i < v.len)
+	{
+		printf("%i\n", v.tab_a[i]);
+		i++;
 	}
 	return (0);
 }

@@ -5,10 +5,13 @@ void	swipe_up(int *tab, int len)
 	int	i;
 
 	i = 0;
-	while (i < len)
+	if (len > 1)
 	{
-		tab[i] = tab[i + 1];
-		i++;
+		while (i < len)
+		{
+			tab[i] = tab[i + 1];
+			i++;
+		}
 	}
 }
 
@@ -17,10 +20,13 @@ void	swipe_down(int *tab, int len)
 	int	i;
 
 	i = len;
-	while (i > 0)
+	if (len > 1)
 	{
-		tab[i] = tab[i - 1];
-		i--;
+		while (i >= 0)
+		{
+			tab[i] = tab[i - 1];
+			i--;
+		}
 	}
 }
 
@@ -28,20 +34,26 @@ void	op_sa(t_value *v)
 {
 	int	tmp;
 
-	tmp = v->tab_a[0];
-	v->tab_a[0] = v->tab_a[1];
-	v->tab_a[1] = tmp;
-	write(1, "sa\n", 3);
+	if (v->tab_a[0] && v->tab_a[1])
+	{
+		tmp = v->tab_a[0];
+		v->tab_a[0] = v->tab_a[1];
+		v->tab_a[1] = tmp;
+		write(1, "sa\n", 3);
+	}
 }
 
 void	op_sb(t_value *v)
 {
 	int	tmp;
 
-	tmp = v->tab_b[0];
-	v->tab_b[0] = v->tab_b[1];
-	v->tab_b[1] = tmp;
-	write(1, "sb\n", 3);
+	if (v->tab_b[0] && v->tab_b[1])
+	{
+		tmp = v->tab_b[0];
+		v->tab_b[0] = v->tab_b[1];
+		v->tab_b[1] = tmp;
+		write(1, "sb\n", 3);
+	}
 }
 
 void	op_ss(t_value *v)

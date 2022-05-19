@@ -27,16 +27,19 @@ void	check_same(t_value *v)
 		j = i + 1;
 		while (j < v->len)
 		{
-			if (v->tab_a[i] == v->tab_a[j])
+			if (v->tab[i] == v->tab[j])
 			{
 				write(1, "ERROR\n", 6);
-				free(v->tab_a);
+				free(v->tab);
 				exit(0);
 			}
 			j++;
 		}
 		i++;
 	}
+	v->tab_a = init_tab_a(v->tab, v->len);
+	v->tab_b = init_tab_b(v->len);
+	free(v->tab);
 }
 
 void	check_nbrs(t_value *v)
