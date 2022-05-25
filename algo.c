@@ -34,3 +34,28 @@ void	algo_len_5(t_value *v)
 	op_pa(v);
 	op_pa(v);
 }
+
+void	all_in_a(t_value *v)
+{
+	while (count_move(v->tab_b, v->len) >= 1)
+		op_pa(v);
+}
+
+void	algo(t_value *v)
+{
+	int	j;
+
+	j = 1;
+	while (count_move(v->tab_b, v->len) < v->len - 3)
+	{
+		if (v->tab_a[0] == j)
+		{
+			op_pb(v);
+			j++;
+		}
+		else
+			op_ra(v);
+	}
+	algo_len_3(v);
+	all_in_a(v);
+}

@@ -84,12 +84,14 @@ int	main(int ac, char **av)
 		v.len = ac - 1;
 		put_to_str(&v, av);
 		put_to_tab(&v);
-		if (tab_tried(v.tab_a, v.len) == 1)
+		if (tab_tried(v.tab_a, v.len))
 			return (0);
 		else if (v.len <= 3)
 			algo_len_3(&v);
 		else if (v.len == 5)
 			algo_len_5(&v);
+		else
+			algo(&v);
 
 	}
 	int i = 0;

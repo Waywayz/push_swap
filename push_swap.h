@@ -23,6 +23,7 @@ int	*init_tab_b(int len);
 int	count_move(int *tab, int len);
 void	algo_len_3(t_value *v);
 void	algo_len_5(t_value *v);
+void	algo(t_value *v);
 void	swipe_up(int *tab, int len);
 void	swipe_down(int *tab, int len);
 void	op_sa(t_value *v);
