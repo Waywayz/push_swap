@@ -15,9 +15,12 @@ CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
+.c.o:
+	$(CC) $(CFLAGS) -g -c $< -o $(<:.c=.o)
+
 $(NAME): $(OBJ)
 	$(MAKE) bonus -C./libft
-	$(CC) $(CFLAGS) $(SRC) $(LIBFT) -o $(NAME) $(HEADER)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME) $(HEADER)
 
 
 clean:
