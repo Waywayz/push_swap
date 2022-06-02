@@ -16,10 +16,11 @@ typedef struct	s_value
 	int	*tab_b;
 }		t_value;
 
-void	check_nbrs(t_value *v);
+void	check_sign(t_value *v);
 void	check_same(t_value *v);
 int	*init_tab_a(int *tab, int len);
 int	*init_tab_b(int len);
+int	len_tab(char **str);
 int	count_move(int *tab, int len);
 void	algo_len_3(t_value *v);
 void	algo_len_5(t_value *v);

@@ -42,7 +42,22 @@ void	check_same(t_value *v)
 	free(v->tab);
 }
 
-void	check_nbrs(t_value *v)
+void	check_nbrs(char *str, t_value *v)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			ft_exit(v);
+		i++;
+	}
+}
+
+void	check_sign(t_value *v)
 {
 	int	i;
 	int	j;
@@ -50,20 +65,21 @@ void	check_nbrs(t_value *v)
 	i = 0;
 	while (v->str[i])
 	{
-		j = 1;
-		if (v->str[i][0] == '-' && v->str[i][1] == '\0')
-			ft_exit(v);
-		if (v->str[i][0] == '-' || (v->str[i][0] >= '0' && v->str[i][0] <= '9'))
+		j = 0;
+		while (v->str[i][j])
 		{
-			while (v->str[i][j])
-			{
-				if (v->str[i][j] < '0' || v->str[i][j] > '9')
-					ft_exit(v);
+			if ((v->str[i][j] == '-' || v->str[i][j] == '+') && v->str[i][j + 1] == '\0')
+				ft_exit(v);
+			if (v->str[i][j] == '-' || v->str[i][j] == '+')
 				j++;
+			else if (v->str[i][j] >= 0 || v->str[i][j] <= 9)
+			{
+				check_nbrs(v->str[i], v);
+				break ;
 			}
+			else
+				ft_exit(v);
 		}
-		else
-			ft_exit(v);
 		i++;
 	}
 }

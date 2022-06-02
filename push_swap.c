@@ -19,7 +19,7 @@ void	**put_to_str(t_value *v, char **av)
 	}
 	v->str = ft_split(str, '\n');
 	free (str);
-	check_nbrs(v);
+	check_sign(v);
 	return (0);
 }
 
@@ -79,7 +79,22 @@ int	main(int ac, char **av)
 {
 	t_value v;
 
-	if (ac > 2)
+	if (ac == 2)
+	{
+		v.str = ft_split(av[1], ' ');
+		v.len = len_tab(v.str);
+		check_sign(&v);
+		put_to_tab(&v);
+		if (tab_tried(v.tab_a, v.len))
+			return (0);
+		else if (v.len <= 3)
+			algo_len_3(&v);
+		else if (v.len == 5)
+			algo_len_5(&v);
+		else
+			algo(&v);
+	}
+	else if (ac > 2)
 	{
 		v.len = ac - 1;
 		put_to_str(&v, av);
@@ -92,8 +107,9 @@ int	main(int ac, char **av)
 			algo_len_5(&v);
 		else
 			algo(&v);
-
 	}
+	else
+		write(1, "ERROR\n", 6);
 	int i = 0;
 	while (i < v.len)
 	{

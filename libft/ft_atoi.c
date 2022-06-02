@@ -24,7 +24,7 @@ long	ft_atoi(const char *nptr)
 	res = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 			neg = neg * -1;

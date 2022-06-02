@@ -60,3 +60,18 @@ int	count_move(int *tab, int len)
 	}
 	return (m);
 }
+
+int	len_tab(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	if (i < 2)
+	{
+		write(1, "ERROR\n", 6);
+		exit(0);
+	}
+	return (i);
+}
