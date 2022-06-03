@@ -2,7 +2,7 @@ LIBFT = libft/libft.a
 
 NAME = push_swap
 
-SRC = push_swap.c check_value.c operation.c operation_2.c operation_3.c algo.c utils.c \
+SRC = push_swap.c check_value.c operation.c operation_2.c operation_3.c algo.c utils.c fill_tab.c \
       		libft/ft_atoi.c libft/ft_split.c libft/ft_strjoin.c libft/ft_calloc.c \
 
 OBJ = $(SRC:.c=.o)

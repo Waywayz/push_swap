@@ -70,6 +70,12 @@ int	len_tab(char **str)
 		i++;
 	if (i < 2)
 	{
+		while (i >= 0)
+		{
+			free(str[i]);
+			i--;
+		}
+		free(str);
 		write(1, "ERROR\n", 6);
 		exit(0);
 	}
