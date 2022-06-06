@@ -24,6 +24,7 @@ int	len_tab(char **str);
 void	**put_to_str(t_value *v, char **str);
 void	*put_to_tab(t_value *v);
 void	free_str(t_value *v);
+int	tab_tried(int *tab, int len);
 int	count_move(int *tab, int len);
 void	algo_len_3(t_value *v);
 void	algo_len_5(t_value *v);

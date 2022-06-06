@@ -67,11 +67,11 @@ int	main(int ac, char **av)
 		push_swap_2(&v, av, ac);
 	else
 		write(1, "ERROR\n", 6);
-	int i = 0;
+/*	int i = 0;
 	while (i < v.len)
 	{
 		printf("%i\n", v.tab_a[i]);
 		i++;
 	}
-	return (0);
+*/	return (0);
 }
