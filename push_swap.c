@@ -32,8 +32,8 @@ void	push_swap_1(t_value *v, char *av)
 		algo_len_5(v);
 	else
 		algo(v);
-//	free(v->tab_a);
-//	free(v->tab_b);
+	free(v->tab_a);
+	free(v->tab_b);
 }
 
 void	push_swap_2(t_value *v, char **av, int ac)
@@ -53,8 +53,8 @@ void	push_swap_2(t_value *v, char **av, int ac)
 		algo_len_5(v);
 	else
 		algo(v);
-//	free(v->tab_a);
-//	free(v->tab_b);
+	free(v->tab_a);
+	free(v->tab_b);
 }
 
 int	main(int ac, char **av)

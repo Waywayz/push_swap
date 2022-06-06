@@ -7,8 +7,8 @@ void	**put_to_str(t_value *v, char **av)
 
 	i = 1;
 	str = "";
-	v->str = malloc(sizeof(char *) * v->len);
-	if (!v->str)
+	str = malloc(sizeof(char) + 1);
+	if (!str)
 		return (0);
 	while (av[i])
 	{
