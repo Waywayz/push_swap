@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/21 16:06:15 by rovillar          #+#    #+#             */
+/*   Updated: 2022/06/21 16:10:25 by rovillar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	tab_tried(int *tab, int len)
@@ -59,7 +71,7 @@ void	push_swap_2(t_value *v, char **av, int ac)
 
 int	main(int ac, char **av)
 {
-	t_value v;
+	t_value	v;
 
 	if (ac == 2)
 		push_swap_1(&v, av[1]);
@@ -67,11 +79,5 @@ int	main(int ac, char **av)
 		push_swap_2(&v, av, ac);
 	else
 		write(1, "ERROR\n", 6);
-/*	int i = 0;
-	while (i < v.len)
-	{
-		printf("%i\n", v.tab_a[i]);
-		i++;
-	}
-*/	return (0);
+	return (0);
 }

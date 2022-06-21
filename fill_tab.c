@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fill_tab.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/21 16:05:41 by rovillar          #+#    #+#             */
+/*   Updated: 2022/06/21 16:09:11 by rovillar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	**put_to_str(t_value *v, char **av)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	i = 1;
 	str = "";
@@ -11,8 +23,7 @@ void	**put_to_str(t_value *v, char **av)
 	if (!str)
 		return (0);
 	while (av[i])
-	{
-	
+	{	
 		str = ft_strjoin(str, av[i]);
 		str = ft_strjoin(str, "\n");
 		i++;

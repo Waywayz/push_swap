@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/21 16:05:25 by rovillar          #+#    #+#             */
+/*   Updated: 2022/06/21 16:21:31 by rovillar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	algo_len_3(t_value *v)
@@ -85,49 +97,3 @@ void	algo(t_value *v)
 	}
 	all_in_a(v);
 }
-
-/*
-void	algo(t_value *v)
-{
-	int	i;
-
-	while (count_move(v->tab_b, v->len) < v->len / 2)
-	{
-		if (v->tab_a[0] <= v->len / 2)
-			op_pb(v);
-		else
-			op_ra(v);
-	}
-	i = v->len / 2;
-	while (count_move(v->tab_b, v->len) > 0)
-	{
-		if (v->tab_b[0] == i)
-		{
-			op_pa(v);
-			i--;
-		}
-		else
-			op_rb(v);
-	}
-	while (count_move(v->tab_a, v->len) > v->len / 2)
-	{
-		if (v->tab_a[0] > v->len / 2)
-			op_pb(v);
-		else
-			op_ra(v);
-	}
-	i = v->len;
-	while (count_move(v->tab_b, v->len) > 0)
-	{
-		if (v->tab_b[0] == i)
-		{
-			op_pa(v);
-			i--;
-		}
-		else
-			op_rb(v);
-	}
-	while (v->tab_a[0] != 1)
-		op_ra(v);
-}
-*/

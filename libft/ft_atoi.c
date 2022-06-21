@@ -6,7 +6,7 @@
 /*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 18:44:49 by rovillar          #+#    #+#             */
-/*   Updated: 2021/11/26 14:39:59 by rovillar         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:13:09 by rovillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 long	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	neg;
+	int		i;
+	int		neg;
 	long	res;
 
 	i = 0;
