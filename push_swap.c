@@ -6,7 +6,7 @@
 /*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:06:15 by rovillar          #+#    #+#             */
-/*   Updated: 2022/06/21 16:10:25 by rovillar         ###   ########.fr       */
+/*   Updated: 2022/06/21 17:00:33 by rovillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ int	main(int ac, char **av)
 {
 	t_value	v;
 
+	if (ac == 1)
+		return (0);
 	if (ac == 2)
 		push_swap_1(&v, av[1]);
 	else if (ac > 2)

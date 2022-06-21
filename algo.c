@@ -6,7 +6,7 @@
 /*   By: rovillar <rovillar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:05:25 by rovillar          #+#    #+#             */
-/*   Updated: 2022/06/21 16:21:31 by rovillar         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:51:32 by rovillar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	algo(t_value *v)
 	int	j;
 	int	bit;
 
-	i = 0;
+	i = -1;
 	bit = bit_decal(v);
-	while (i < bit && !tab_tried(v->tab_a, v->len))
+	while (i++ < bit && !tab_tried(v->tab_a, v->len))
 	{
 		j = count_move(v->tab_a, v->len);
 		while (j > 0)
@@ -93,7 +93,6 @@ void	algo(t_value *v)
 			op_pa(v);
 			j--;
 		}
-		i++;
 	}
 	all_in_a(v);
 }
